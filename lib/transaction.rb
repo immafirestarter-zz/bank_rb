@@ -1,6 +1,6 @@
 require './lib/bank'
+# Handles transactions
 class Transaction
-
   attr_reader :bank, :balance
 
   def initialize(bank = Bank.new)

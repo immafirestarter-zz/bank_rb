@@ -1,11 +1,9 @@
+# contains printer method for the statement
 class Statement
-
-  attr_reader :account
-
   def printer(account)
-    puts "date || credit || debit || balance"
+    puts 'date || credit || debit || balance'
     account.each do |x|
-    return x.each { |y| y }.join(" || ")
-   end
- end
+      puts x.each { |y| y }.join(' || ')
+    end
+  end
 end
