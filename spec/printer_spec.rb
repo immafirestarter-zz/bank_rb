@@ -1,4 +1,6 @@
-# describe Printer do
-# it 'records transactions inside of an array' do
-# end
-# end
+require './lib/statement'
+
+describe Statement do
+it 'prints out a statement in a specific format' do
+end
+end

@@ -16,5 +16,5 @@ class Transaction
   def withdraw(money)
     @balance = @balance -= money
     @bank.withdraw_calculator(money, @balance)
-end
+  end
 end
