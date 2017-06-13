@@ -1,8 +1,9 @@
-require './lib/account'
-describe Account do
-  it 'initalizes and account with a balance 0' do
-  expect(subject.balance).to eq 0
-end
+require './lib/bank'
 
-it 'adds to the total when money is added or taken away from account'
+describe Bank do
+
+  it 'initalizes an empty account' do
+    expect(subject.account).to be_empty
+  end
+
 end

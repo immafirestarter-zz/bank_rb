@@ -1,19 +1,20 @@
-require './lib/account'
+require './lib/bank'
 class Transaction
-  attr_reader :date, :credit, :debit
 
-  def initialize(account = Account.new)
+  attr_reader :bank, :balance
+
+  def initialize(bank = Bank.new)
     @balance = 0
-    @account = account
+    @bank = bank
   end
 
   def deposit(money)
-   @balance = @balance += money
-   @account.deposit_calulator(money, @balance)
+    @balance = @balance += money
+    @bank.deposit_calulator(money, @balance)
   end
 
   def withdraw(money)
-    @debit = @balance -= money
-    @account.withdraw_calculator(money, @balance)
+    @balance = @balance -= money
+    @bank.withdraw_calculator(money, @balance)
 end
 end
