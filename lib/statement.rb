@@ -1,9 +1,11 @@
 class Statement
 
-  def print(account)
+  attr_reader :account
+
+  def printer(account)
     puts "date || credit || debit || balance"
     account.each do |x|
-    puts x.each { |y| y }.join(" || ")
+    return x.each { |y| y }.join(" || ")
    end
  end
 end

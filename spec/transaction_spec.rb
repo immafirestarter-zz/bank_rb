@@ -1,4 +1,5 @@
 require './lib/transaction'
+require 'Date'
 
 describe Transaction do
 
@@ -9,12 +10,12 @@ describe Transaction do
 
   it 'records the date of the deposition' do
     subject.deposit(40)
-    expect(subject.bank.account[0][0]).to eq Time.now.strftime('%d/%b/%Y')
+    expect(subject.bank.account[0][0]).to eq Date.today.strftime('%d/%b/%Y')
   end
 
   it 'adds deposited money to the account' do
     subject.deposit(4)
-    expect(subject.bank.account).to eq [[Time.now.strftime('%d/%b/%Y'),
+    expect(subject.bank.account).to eq [[Date.today.strftime('%d/%b/%Y'),
     4, 0, 4]]
   end
 
@@ -25,12 +26,12 @@ describe Transaction do
 
   it 'records the date of the withdrawal' do
     subject.withdraw(40)
-    expect(subject.bank.account[0][0]).to eq Time.now.strftime('%d/%b/%Y')
+    expect(subject.bank.account[0][0]).to eq Date.today.strftime('%d/%b/%Y')
   end
 
   it 'adds withdrawn money to an account' do
     subject.withdraw(4)
-    expect(subject.bank.account).to eq [[Time.now.strftime('%d/%b/%Y'),
+    expect(subject.bank.account).to eq [[Date.today.strftime('%d/%b/%Y'),
     0, 4, -4]]
   end
     end

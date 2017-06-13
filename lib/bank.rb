@@ -1,4 +1,5 @@
 require_relative 'statement'
+require 'Date'
 class Bank
 
   attr_reader :account, :statement
@@ -9,12 +10,10 @@ class Bank
   end
 
   def deposit_calulator(money, balance)
-    @account << [Time.now.strftime('%d/%b/%Y'), money, 0, balance]
-    @statement.print(@account)
+    @account << [Date.today.strftime('%d/%b/%Y'), money, 0, balance]
   end
 
   def withdraw_calculator(money, balance)
-    @account << [Time.now.strftime('%d/%b/%Y'), 0, money, balance]
-    @statement.print(@account)
+    @account << [Date.today.strftime('%d/%b/%Y'), 0, money, balance]
   end
 end
