@@ -2,10 +2,9 @@ require_relative 'statement'
 require 'Date'
 # this class holds account array and related methods
 class Bank
-  attr_reader :account, :statement
+  attr_reader :account
 
-  def initialize(statement = Statement.new)
-    @statement = statement
+  def initialize
     @account = []
   end
 
